@@ -2,8 +2,8 @@
 from django import forms
 from .models import *
   
-class breastcancerForm(forms.ModelForm):
+# class breastcancerForm(forms.ModelForm):
   
-    class Meta:
-        model = Hotel
-        fields = ['name', 'breastcancer_Main_Img']
+#     class Meta:
+#         model = ...........
+#         fields = ['name', 'breastcancer_Main_Img']
