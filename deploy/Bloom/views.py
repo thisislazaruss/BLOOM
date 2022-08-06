@@ -11,8 +11,8 @@ import tensorflow as tf
 
 
 def success(request):
-    loaded_model = tf.keras.models.load_model("template/prekshyaandsrishti.h5")
-    loaded_model.build()
+    loaded_model = tf.keras.models.load_model("templates/prekshyaandsrishti.h5")
+    loaded_model.build(256)
     return render(request, 'success.html')
 
 
