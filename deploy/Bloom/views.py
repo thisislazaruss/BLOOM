@@ -1,12 +1,19 @@
 # Create your views here.
+from cgitb import text
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .forms import *
+import tensorflow as tf
+
 # from django.core.files.storage import FileSystemStorage
 
 # Create your views here.
+
+
 def success(request):
-	return HttpResponse('successfully uploaded')
+    loaded_model = tf.keras.models.load_model("template/prekshyaandsrishti.h5")
+    loaded_model.build()
+    return render(request, 'success.html')
 
 
 def image_upload(request):
@@ -21,6 +28,3 @@ def image_upload(request):
     else:
         form = ImageForm()
     return render(request, 'image_upload.html', {'form': form})
-
-
-
