@@ -1,14 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>image</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOOM</title>
+    <link rel="shortcut icon" href="https://lucalem.com/wp-content/themes/lucalem_wptheme/theme-assets/node_modules/bootstrap/assets/favicon.png" />
+    <script src="https://www.w3counter.com/tracker.js?id=131748"></script>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
 </head>
+
 <body>
-    <form method = "post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Upload</button>
-    </form>
+    
+
+    <div id =" head" class="container">
+        <section class="landing">
+            <div class="row vertical-center">
+                <div class="col-lg-8 text-left pb-5">
+                    <h1 class="display-3">BLOOM</h1>
+                    <p class="lead pl-2">
+                        An app every women needs
+                    </p>
+                </div>
+                <div class="col-lg-4 text-center my-auto pb-5 rounded-circle"><img class="img-fluid rounded-circle"
+                        src="images/breastcancerawareness.png">
+                        <form method = "post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button type="submit" class="hiii">Upload</button>
+                        </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-4 mb-4">
+            <h4 class="display-4">About BLOOM</h4>
+            <div class="row">
+                <div class="col-lg-6 wrap text-left">
+                    <div class="about-desc">
+                        
+                        <div class="pt-5">
+                            <h3 class="mb-5">Welcome!</h3>
+                            <p>Bloom was inspired by the consequences we see in our society due to lack of open talk about female reproductive health. Nepal being a developing country, it's major consequences could be seen in rural community and mostly far-western region of Nepal where females are forced to follow some superstitions like " Chhaupadi". Breast cancer is the second most common malignancy among Nepalese women with prevalence of 28.5 per 100,000 population. In Nepal due to lack of uniform health resources and awareness, breast cancer cases reporting is different in three geographical regions.<br>
+                                <h5>Since this is an open source project by the Team LiLacs, every support you do do make our reach more, will be counted. </h5>
+                            </p>
+
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+    </div>
 </body>
 </html>
