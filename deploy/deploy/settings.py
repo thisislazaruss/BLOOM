@@ -62,7 +62,11 @@ ROOT_URLCONF = 'deploy.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+<<<<<<< HEAD
         'DIRS': [BASE_DIR / 'templates', BASE_DIR / 'images'],
+=======
+        'DIRS': [BASE_DIR / 'templates', BASE_DIR / 'media'],
+>>>>>>> 11078f194c8998bf80a3043f27b686b91ac7046b
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
