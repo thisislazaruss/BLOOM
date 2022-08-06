@@ -2,6 +2,7 @@
 from cgitb import text
 from dataclasses import dataclass
 from email.mime import image
+from tkinter.tix import IMAGE
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .forms import *
@@ -22,16 +23,18 @@ def success(request):
     path = settings.MEDIA_ROOT
     img_list = os.listdir(path)
     context = {"images": img_list}
-    #print(context)
-    image = tf.image.resize(context, (256,256))
-    image_tensor = tf.convert_to_tensor(img_list, dtype=tf.float32)
-    i#mage_tensor = tf.expand_dims(image_tensor, 0)
+    img = Image.open(path + "/" + context['images'][0])
+    image = np.asarray(img)
+    # print(image)
+    image = tf.image.resize(image, (256,256))
+    image_tensor = tf.convert_to_tensor(image, dtype=tf.float32)
+    image_tensor = tf.expand_dims(image_tensor, 0)
     #image = np.array(image)
     #image= image.resize((64,64))
     #image = tf.reshape(image, shape=(3, 256,256, 3))
     
-    prediction = loaded_model.__call__(image)
-    return render(request, 'success.html', context)
+    prediction = loaded_model.__call__(image_tensor)
+    return render(request, 'success.html', {})
 
 
 def image_upload(request):
